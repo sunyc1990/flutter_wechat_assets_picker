@@ -5,6 +5,7 @@
 import 'package:flutter/material.dart';
 
 import '../constants/custom_pick_method.dart';
+import '21blocks.dart';
 import 'pickers/directory_file_asset_picker.dart';
 import 'pickers/multi_tabs_assets_picker.dart';
 
@@ -49,6 +50,15 @@ class _CustomPickerPageState extends State<CustomPickersPage>
             'assets for the picking at the same time.',
         method: (BuildContext context) => Navigator.of(context).push<void>(
           MaterialPageRoute<void>(builder: (_) => const MultiTabAssetPicker()),
+        ),
+      ),
+      CustomPickMethod(
+        icon: '🔀',
+        name: '21Block tab picker',
+        description: 'The picker contains multiple tab with different types of '
+            'assets for the picking at the same time.',
+        method: (BuildContext context) => Navigator.of(context).push<void>(
+          MaterialPageRoute<void>(builder: (_) => const MultiBlockAssetPicker()),
         ),
       ),
     ];

@@ -15,7 +15,9 @@ dependencies:
 
   wechat_assets_picker:
     path: ../
-  wechat_camera_picker: ^3.2.0
+  wechat_camera_picker:
+    path: ../../flutter_wechat_camera_picker
+#  wechat_camera_picker: ^3.2.0
 
   package_info_plus: ^1.4.2
   path: ^1.8.0

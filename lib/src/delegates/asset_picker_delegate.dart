@@ -154,6 +154,28 @@ class AssetPickerDelegate {
     );
     return result;
   }
+  Future<List<AssetEntity>?> pickAssetsWithDelegate2<AssetEntity, AssetPathEntity,
+  PickerProvider extends AssetPickerProvider<AssetEntity, AssetPathEntity>>(
+      BuildContext context, {
+        required AssetPickerBuilderDelegate<AssetEntity, AssetPathEntity> delegate,
+        Key? key,
+        bool useRootNavigator = true,
+        AssetPickerPageRouteBuilder<List<AssetEntity>>? pageRouteBuilder,
+      }) async {
+    await permissionCheck();
+    final Widget picker = AssetPicker<AssetEntity, AssetPathEntity>(
+      key: key,
+      builder: delegate,
+    );
+    final List<AssetEntity>? result = await Navigator.of(
+      context,
+      rootNavigator: useRootNavigator,
+    ).push<List<AssetEntity>>(
+      pageRouteBuilder?.call(picker) ??
+          AssetPickerPageRoute<List<AssetEntity>>(builder: (_) => picker),
+    );
+    return result;
+  }
 
   /// {@template wechat_assets_picker.delegates.AssetPickerDelegate.registerObserve}
   /// Register observe callback with assets changes.

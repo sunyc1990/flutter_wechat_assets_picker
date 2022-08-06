@@ -69,6 +69,22 @@ class AssetPicker<Asset, Path> extends StatefulWidget {
       pageRouteBuilder: pageRouteBuilder,
     );
   }
+  static Future<List<AssetEntity>?> pickAssetsWithDelegate2<AssetEntity, AssetPathEntity,
+  PickerProvider extends AssetPickerProvider<AssetEntity, AssetPathEntity>>(
+      BuildContext context, {
+        Key? key,
+        required AssetPickerBuilderDelegate<AssetEntity, AssetPathEntity> delegate,
+        bool useRootNavigator = true,
+        AssetPickerPageRouteBuilder<List<AssetEntity>>? pageRouteBuilder,
+      }) {
+    return _pickerDelegate.pickAssetsWithDelegate2<AssetEntity, AssetPathEntity, PickerProvider>(
+      context,
+      key: key,
+      delegate: delegate,
+      useRootNavigator: useRootNavigator,
+      pageRouteBuilder: pageRouteBuilder,
+    );
+  }
 
   /// {@macro wechat_assets_picker.delegates.AssetPickerDelegate.registerObserve}
   static void registerObserve([ValueChanged<MethodCall>? callback]) {

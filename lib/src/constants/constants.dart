@@ -5,8 +5,8 @@
 import 'package:flutter/painting.dart';
 import 'package:photo_manager/photo_manager.dart';
 
-const int defaultAssetsPerPage = 80;
-const int defaultMaxAssetsCount = 9;
+const int defaultAssetsPerPage = 60;///每页
+const int defaultMaxAssetsCount = 9; ///每行
 
 /// Default theme color from WeChat.
 const Color defaultThemeColorWeChat = Color(0xff00bc56);

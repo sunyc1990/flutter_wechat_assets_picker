@@ -924,10 +924,12 @@ class DefaultAssetPickerBuilderDelegate
 
   @override
   Widget androidLayout(BuildContext context) {
+
     return AssetPickerAppBarWrapper(
       appBar: appBar(context),
       body: Consumer<DefaultAssetPickerProvider>(
         builder: (BuildContext context, DefaultAssetPickerProvider p, _) {
+          print('3333338');
           final bool shouldDisplayAssets =
               p.hasAssetsToDisplay || shouldBuildSpecialItem;
           return AnimatedSwitcher(
@@ -1237,6 +1239,7 @@ class DefaultAssetPickerBuilderDelegate
       (DefaultAssetPickerProvider p) => p.hasMoreToLoad,
     );
     if (index == length - gridCount * 3 && hasMoreToLoad) {
+      print('333333');
       context.read<DefaultAssetPickerProvider>().loadMoreAssets();
     }
 
@@ -2153,6 +2156,7 @@ class DefaultAssetPickerBuilderDelegate
 
   @override
   Widget build(BuildContext context) {
+    print('3333330');
     // Schedule the scroll position's restoration callback if this feature
     // is enabled and offsets are different.
     if (keepScrollOffset && Singleton.scrollPosition != null) {
